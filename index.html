@@ -6,14 +6,14 @@
   <meta name="format-detection" content="telephone=no">
   <title>Fortech</title>
 
-  <link rel="stylesheet" href="style/style-main.css">
+  <link rel="stylesheet" href="style/styleHeader.css">
   <link rel="shortcut icon" type="img/icon" href="image/icons8-буква-f-50.png">
 </head>
 <body>
   
   <header class="header">
 
-    <div class="wrapper">
+    <div class="wrapper container">
 
       <div class="logo">
         <a href="index.html" class="image__link">
@@ -21,20 +21,31 @@
         </a>
       </div>
 
-      <nav class="menu">
-        <ol class="menu__list">
-          <li class="menu__item">
-            <a href="" class="menu__link"></a>
+      <nav class="menu menu--display">
+        <ol class="menu__list menu--display">
+          <li class="menu__item menu__item--js">
+            <a href="" class="menu__link">Проекты</a>
+            <div class="menu__border border--translate"></div>
           </li>
-          <li class="menu__item">
-            <a href="" class="menu__link"></a>
+          <li class="menu__item menu__item--js">
+            <a href="" class="menu__link">О нас</a>
+            <div class="menu__border border--translate"></div>
           </li>
-          <li class="menu__item">
-            <a href="" class="menu__link"></a>
+          <li class="menu__item menu__item--js">
+            <a href="" class="menu__link">Контакты</a>
+            <div class="menu__border border--translate"></div>
           </li>
-          <li class="menu__item">
-            <a href="" class="menu__link"></a>
+          <li class="menu__item menu__item--js">
+            <a href="" class="menu__link">Блог</a>
+            <div class="menu__border border--translate"></div>
           </li>
+        </ol>
+      </nav>
+
+      <nav class="language__nav menu--display">
+        <ol class="menu__list menu__language menu--display">
+          <li class="menu__item menu__language--js selected-language">Ru</li>
+          <li class="menu__item menu__language--js">En</li>
         </ol>
       </nav>
 
@@ -42,5 +53,7 @@
 
   </header>
 
+
+  <script src="script/scriptHeader.js"></script>
 </body>
 </html>
