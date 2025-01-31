@@ -168,16 +168,27 @@
 }
 
 
+.three__content{
+  width: 75%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .three{
   margin-top: 70px;
 }
 .three__background{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 506px;
 
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 20px 1px rgba(187, 184, 199, 0.24);
+  box-shadow: 0 0 20px 1px rgba(187, 184, 199, 0.15);
 }
 .three__left{
   width: 410px;
@@ -211,3 +222,109 @@
 
   color: rgba(75, 46, 200, 1);
 }
+
+.three__right{
+  width: 600px;
+
+  padding-left: 30px;
+}
+
+.input__containers{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 248px;
+}
+.input__container{
+  position: relative;
+  width: 100%;
+}
+.input-name, .input-email, .input-phone, .input-description{
+  width: 100%;
+  padding: 0px 6px;
+  font-size: 16px;
+  font-weight: 400;
+
+  height: 38px;
+  border: none;
+  border-bottom: 1px solid gray;
+  box-sizing: border-box;
+  color: rgba(107, 114, 128, 1);
+
+}
+.input--focus:hover{
+  border-bottom: 1px solid rgba(75, 46, 200, 1);
+}
+.input__container label{
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+
+  color: rgba(134, 135, 137, 0.4);
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input--focus:focus ~ label,
+.input--focus:not(:placeholder-shown) ~ label {
+  top: -16px; 
+  left: 0px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(75, 46, 200, 1);
+}
+
+.input--focus:focus{
+  outline:none;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+
+  color: rgba(107, 114, 128, 1);
+  background-color: rgba(249, 250, 251, 1);
+  border-bottom: 2px solid rgba(75, 46, 200, 1);
+}
+.input--focus:not(:placeholder-shown){
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+
+  background-color: rgba(249, 250, 251, 1);
+}
+.subinput-description__text{
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+
+  margin-top: 10px;
+  color: rgba(107, 114, 128, 1);
+}
+.div__button{
+  display: flex;
+  justify-content: end;
+}
+.button__send{
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 1);
+
+  padding: 16px 24px 16px 24px;
+  background-color: rgba(75, 46, 200, 1);
+  border-radius: 8px;
+
+  cursor: not-allowed;
+  margin-top: 50px;
+}
+
+
