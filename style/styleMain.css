@@ -167,7 +167,9 @@
   width: 100%;
 }
 
-
+.three-footer__wrapper{
+  position: relative;
+}
 .three__content{
   width: 75%;
 
@@ -177,6 +179,8 @@
 }
 .three{
   margin-top: 70px;
+  position: relative;
+  z-index: 12;
 }
 .three__background{
   display: flex;
@@ -328,3 +332,61 @@
 }
 
 
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -280px;
+  height: 496px;
+  z-index: 1;
+
+  background-color: rgba(75, 46, 200, 1);
+}
+.footer__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 150px;
+  margin-top: 230px;
+}
+.footer__menu{
+  display: flex;
+  justify-content: space-between;
+  width: 514px;
+}
+.footer__menu p{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  color: rgba(255, 255, 255, 1);
+}
+.messenger__icons{
+  display: flex;
+  justify-content: space-between;
+  width: 148px; 
+}
+.messenger__icons img{
+  transition: 0.4s all;
+  padding: 10px;
+  border-radius: 30%;
+}
+.messenger__icons img:hover{
+  background-color: rgb(70, 22, 199);
+
+}
+.privacy-policy{
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+
+color: rgba(255, 255, 255, 1);
+}
