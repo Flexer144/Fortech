@@ -31,3 +31,8 @@ menuEl.forEach((menuEl) => {
       element.classList.remove('selected-language')
     }
   }
+
+
+  document.querySelector('.upload__icon').addEventListener('click', () => {
+    document.querySelector('#fileInput').click();
+  })
