@@ -32,7 +32,20 @@ menuEl.forEach((menuEl) => {
     }
   }
 
+let button = document.querySelector('.header-burger')
+let bodyWrapper = document.querySelector('.body__wrapper')
+
+button.addEventListener('click', ()=>{
+  if(!bodyWrapper.classList.contains('open')){
+    bodyWrapper.classList.add('open')
+  } else if(bodyWrapper.classList.contains('open')){
+    bodyWrapper.classList.remove('open')
+  }
+})
+
+
 
   document.querySelector('.upload__icon').addEventListener('click', () => {
     document.querySelector('#fileInput').click();
   })
+
