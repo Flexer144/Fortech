@@ -42,10 +42,3 @@ button.addEventListener('click', ()=>{
     bodyWrapper.classList.remove('open')
   }
 })
-
-
-
-  document.querySelector('.upload__icon').addEventListener('click', () => {
-    document.querySelector('#fileInput').click();
-  })
-

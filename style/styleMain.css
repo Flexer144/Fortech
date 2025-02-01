@@ -369,7 +369,7 @@ input[type="file"]{
   color: rgba(255, 255, 255, 1);
 
   padding: 16px 24px 16px 24px;
-  background-color: rgba(75, 46, 200, 1);
+  background-color: rgb(53, 34, 134);
   border-radius: 8px;
   border: none;
 
@@ -436,7 +436,10 @@ line-height: 24px;
 
 color: rgba(255, 255, 255, 1);
 }
-
+.enabled{
+  background-color: rgb(84, 52, 228);
+  cursor: pointer;
+}
 
 
 
