@@ -16,6 +16,7 @@ a{
   max-width: 1550px;
   padding: 0 15px
 }
-body{
+html, body{
   font-family: "Montserrat Alternates", serif;
+  height: 100%;
 }

@@ -548,7 +548,7 @@ color: rgba(255, 255, 255, 1);
 @media screen and (width <= 650px){
   .one-text__title{
     font-size: 40px;
-    margin-top: 75px;
+    margin-top: 55px;
     line-height: 44.73px;
   }
   .one-text__subtitle{
@@ -557,6 +557,7 @@ color: rgba(255, 255, 255, 1);
   }
   .one__line{
     height: 15px;
+    width: 270px;
   }
   .one__filled-line{
     height: 15px;
