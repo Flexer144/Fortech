@@ -7,6 +7,10 @@ let form = document.querySelector('.input__containers'),
   textboxText = document.querySelector('.checkbox-text'),
   errorTexts = document.querySelectorAll('.error-text')
 
+function validateName(name){
+  let re = /^[A-Za-zА-Яа-яЁё'-]+$/;
+  return re.test(String(name).trim())
+}
 function validateEmail(email){
   let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase())
@@ -24,6 +28,7 @@ function validatePhone(phone){
 form.onsubmit = function(){
   let emailVal = inputEmail.value,
       phoneVal = inputPhone.value,
+      nameVal = inputName.value,
       emptyInputs = Array.from(formInputs).filter(input => input.value === '')
 
   formInputs.forEach((input, index)=>{
@@ -39,6 +44,17 @@ form.onsubmit = function(){
   if(emptyInputs.length !== 0){
     console.log('input not filled')
     return false;
+  }
+
+  let nameErrorText = inputName.nextElementSibling;
+  if(!validateName(nameVal)){
+    console.log('name not valid')
+    inputName.classList.add('error')
+    nameErrorText.innerHTML = 'Неккоректное имя'
+    return false
+  } else{
+    inputName.classList.remove('error')
+    nameErrorText.innerHTML = 'ㅤ'
   }
 
   let emailErrorText = inputEmail.nextElementSibling;
@@ -89,3 +105,70 @@ document.querySelector('.upload__icon').addEventListener('click', (event) => {
   event.preventDefault();
   document.querySelector('#fileInput').click();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const buttonSend = document.querySelector('.button__send');
+
+const input = {
+  Name: document.querySelector('.input-name'),
+  Email: document.querySelector('.input-email'),
+  Phone: document.querySelector('.input-phone')
+};
+
+function checkInput() {
+  const allFilled = Object.values(input).every(inputField => inputField.value.trim() !== '');
+  const isNameValid = /^[^\s]+$/.test(input.Name.value.trim());
+
+  if (allFilled) {
+    buttonSend.disabled = false;
+    buttonSend.classList.add('enabled');
+  } else {
+    buttonSend.disabled = true;
+    buttonSend.classList.remove('enabled');
+  }
+
+  if(isNameValid){
+    input.Name.style.borderBottom = '2px solid rgb(84, 52, 228)'
+    buttonSend.disabled = false;
+  } else{
+    input.Name.style.borderBottom = '2px solid red'
+    buttonSend.classList.remove('enabled');
+    buttonSend.disabled = true;
+  }
+}
+
+
+Object.values(input).forEach(inputField => {
+  inputField.addEventListener('input', checkInput);
+});
+
+checkInput();
+
+
+
+
+buttonSend.addEventListener('click', () => {
+  console.log(input.Name.value);
+  console.log(input.Email.value);
+  console.log(input.Phone.value);
+  checkInput();
+});
+console.log(Object.values(input))
+
+})*/
