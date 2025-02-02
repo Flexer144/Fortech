@@ -162,41 +162,50 @@
 
               <div class="three__right">
 
-                <div class="input__containers">
+                <form class="input__containers" action="" novalidate>
                   
                   <div class="input__container">
-                    <input id="input-name" class="input-name input--focus" placeholder="" type="text" >
-                    <label for="Name">Имя</label>
+                    <input id="input-name" class="input-name input--focus js-input" placeholder="" type="text" >
+                    <label for="Name" class="label">Имя</label>
+                    <p class="error-text">ㅤ</p>
                   </div>
               
                   <div class="input__container">
-                    <input id="input-email" class="input-email input--focus" placeholder="" type="email">
-                    <label for="Email">Email</label>
+                    <input id="input-email" class="input-email input--focus js-input" placeholder="" type="email">
+                    <p class="error-text">ㅤ</p>
+                    <label for="Email" class="label">Email</label>
                   </div>
                 
                   <div class="input__container">
-                    <input id="input-phone" class="input-phone input--focus" placeholder="" type="tel" >
-                    <label for="Phone">Номер телефона</label>
+                    <input id="input-phone" class="input-phone input--focus js-input" placeholder="" type="tel" >
+                    <p class="error-text">ㅤ</p>
+                    <label for="Phone" class="label">Номер телефона</label>
                   </div>
               
                   <div class="input__container">
                     <input id="input-description" class="input-description input--focus" placeholder="" type="text">
-                    <label for="description">Краткое описание</label>
+                    <label for="description" class="label__description">Краткое описание</label>
                     <div class="upload__container">
                       <input type="file" id="fileInput">
                       <button for="fileInput" class="upload__icon hover"><img src="image/clipHover.png" alt=""></button>
                       <button for="fileInput" class="upload__icon hover2"><img src="image/clip.png" alt=""></button>
                     </div>
+                    <div class="subinput-description__text">
+                      Пожалуйста, загрузите файл со следующим расширением: 
+                      .pdf, .docx, .odt, .ods, .ppt/x, .xls/x, .rtf, .txt
+                    </div>
                   </div>
-                </div>
-                <div class="subinput-description__text">
-                  Пожалуйста, загрузите файл со следующим расширением: 
-                  .pdf, .docx, .odt, .ods, .ppt/x, .xls/x, .rtf, .txt
-                </div>
+
+                  <div class="div__checkbox">
+                    <input type="checkbox" name="" class="checkbox js-input-checkbox">
+                    <p class="checkbox-text">Подтверждаю прочтение и cогласие с <span><a href="#">Политикой конфиденциальности</a></span></p>
+                  </div>
+                  
+                  <div class="div__button">
+                    <button class="button__send" type="submit">Отправить</button>
+                  </div>
+                </form>
                 
-                <div class="div__button">
-                  <button class="button__send">Отправить</button>
-                </div>
                 
               </div>
             </div>
