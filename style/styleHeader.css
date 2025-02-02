@@ -116,6 +116,7 @@
   }
   .burger__menu{
     display: unset;
+    padding-right: 20px;
   }
   .div-menu{
     display:unset;
@@ -194,5 +195,17 @@
   .block2 a{
     font-weight: 700;
     font-size: 22px;
+  }
+}
+
+@media screen and (width <= 450px){
+  .language__nav{
+    margin-left: 42px;
+  }
+  .logo{
+    padding-right: 20px;
+  }
+  .burger__menu{
+    padding-right: 10px;
   }
 }
