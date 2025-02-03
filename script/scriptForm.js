@@ -36,8 +36,6 @@ function callingNotification(timer){
   }, 500)
 }
 
-
-
 form.onsubmit = function(event){
   event.preventDefault();
   let emailVal = inputEmail.value,
