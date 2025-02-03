@@ -5,7 +5,9 @@ let form = document.querySelector('.input__containers'),
   inputPhone = document.querySelector('.input-phone'),
   inputCheckbox = document.querySelector('.js-input-checkbox'),
   textboxText = document.querySelector('.checkbox-text'),
-  errorTexts = document.querySelectorAll('.error-text')
+  errorTexts = document.querySelectorAll('.error-text'),
+  notificate = document.querySelector('.notificate'),
+  notificateHTML = document.querySelector('.notificate')
 
 function validateName(name){
   let re = /^[A-Za-zА-Яа-яЁё'-]+$/;
@@ -23,9 +25,21 @@ function validatePhone(phone){
   let re = /^(?:\+7|7|\+8|8)?[\s\-]?(\(?\d{3}\)?[\s\-]?)?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
   return re.test(String(phone))
 }
+function callingNotification(timer){
+  setTimeout(()=>{
+    notificate.classList.add('open--notificate')
+    timer.classList.add('not--timer')
+    setTimeout(()=>{
+      notificate.classList.remove('open--notificate')
+      timer.classList.remove('not--timer')
+    }, 5000)
+  }, 500)
+}
 
 
-form.onsubmit = function(){
+
+form.onsubmit = function(event){
+  event.preventDefault();
   let emailVal = inputEmail.value,
       phoneVal = inputPhone.value,
       nameVal = inputName.value,
@@ -97,7 +111,27 @@ form.onsubmit = function(){
   else{
     textboxText.classList.remove('checkbox-error')
   }
+
+  let HTML = `
+    <div class="notificate__content">
+      <p>Данные отправленны!</p>
+      <div class="information">
+        <p>Имя: ${nameVal}</p>
+        <p>Email: ${emailVal}</p>
+        <p>Телефон: ${phoneVal}</p>
+      </div>
+      <div class="timer"></div>
+    </div>
+  `
+  notificateHTML.innerHTML = HTML;
+
+  let timer = document.querySelector('.timer');
+
+
+  callingNotification(timer)
+  form.reset()
 }
+
 
 
 
@@ -105,70 +139,3 @@ document.querySelector('.upload__icon').addEventListener('click', (event) => {
   event.preventDefault();
   document.querySelector('#fileInput').click();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const buttonSend = document.querySelector('.button__send');
-
-const input = {
-  Name: document.querySelector('.input-name'),
-  Email: document.querySelector('.input-email'),
-  Phone: document.querySelector('.input-phone')
-};
-
-function checkInput() {
-  const allFilled = Object.values(input).every(inputField => inputField.value.trim() !== '');
-  const isNameValid = /^[^\s]+$/.test(input.Name.value.trim());
-
-  if (allFilled) {
-    buttonSend.disabled = false;
-    buttonSend.classList.add('enabled');
-  } else {
-    buttonSend.disabled = true;
-    buttonSend.classList.remove('enabled');
-  }
-
-  if(isNameValid){
-    input.Name.style.borderBottom = '2px solid rgb(84, 52, 228)'
-    buttonSend.disabled = false;
-  } else{
-    input.Name.style.borderBottom = '2px solid red'
-    buttonSend.classList.remove('enabled');
-    buttonSend.disabled = true;
-  }
-}
-
-
-Object.values(input).forEach(inputField => {
-  inputField.addEventListener('input', checkInput);
-});
-
-checkInput();
-
-
-
-
-buttonSend.addEventListener('click', () => {
-  console.log(input.Name.value);
-  console.log(input.Email.value);
-  console.log(input.Phone.value);
-  checkInput();
-});
-console.log(Object.values(input))
-
-})*/
