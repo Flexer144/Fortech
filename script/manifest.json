@@ -1,0 +1,22 @@
+{
+  "name": "fortech",
+  "short_name": "fortech",
+  "icons": [
+    {
+      "src": "image/logo F.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image/logo F.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "fortech blog",
+  "orientation": "portrait"
+}
