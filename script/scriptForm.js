@@ -1,3 +1,4 @@
+//Объявление переменных
 let form = document.querySelector('.input__containers'),
   formInputs = document.querySelectorAll('.js-input'),
   inputName = document.querySelector('.input-name'),
@@ -9,6 +10,8 @@ let form = document.querySelector('.input__containers'),
   notificate = document.querySelector('.notificate'),
   notificateHTML = document.querySelector('.notificate')
 
+
+//Функции для валидации полей
 function validateName(name){
   let re = /^[A-Za-zА-Яа-яЁё'-]+$/;
   return re.test(String(name).trim())
@@ -36,6 +39,7 @@ function callingNotification(timer){
   }, 500)
 }
 
+//Проверка формы
 form.onsubmit = function(event){
   event.preventDefault();
   let emailVal = inputEmail.value,
@@ -54,13 +58,11 @@ form.onsubmit = function(event){
   })
 
   if(emptyInputs.length !== 0){
-    console.log('input not filled')
     return false;
   }
 
   let nameErrorText = inputName.nextElementSibling;
   if(!validateName(nameVal)){
-    console.log('name not valid')
     inputName.classList.add('error')
     nameErrorText.innerHTML = 'Неккоректное имя'
     return false
@@ -71,7 +73,6 @@ form.onsubmit = function(event){
 
   let emailErrorText = inputEmail.nextElementSibling;
   if(!validateEmail(emailVal)){
-    console.log('email not valid')
     inputEmail.classList.add('error')
     emailErrorText.innerHTML = 'Неккоректный email'
     return false
@@ -81,7 +82,6 @@ form.onsubmit = function(event){
   }
 
   if(validateCountry(emailVal)){
-    console.log('email from Columbia')
     inputEmail.classList.add('error')
     emailErrorText.innerHTML = 'Неккоректный email'
     return false
@@ -92,7 +92,6 @@ form.onsubmit = function(event){
 
   let phoneErrorText = inputPhone.nextElementSibling
   if(!validatePhone(phoneVal)){
-    console.log('number in not correct')
     inputPhone.classList.add('error')
     phoneErrorText.innerHTML = 'Неккоректный номер телефона'
     return false
@@ -102,7 +101,6 @@ form.onsubmit = function(event){
   }
 
   if(!inputCheckbox.checked){
-    console.log('checkbox not check')
     textboxText.classList.add('checkbox-error');
     return false;
   }
@@ -124,7 +122,6 @@ form.onsubmit = function(event){
   notificateHTML.innerHTML = HTML;
 
   let timer = document.querySelector('.timer');
-
 
   callingNotification(timer)
   form.reset()

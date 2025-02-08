@@ -1,14 +1,14 @@
-const menuEl = document.querySelectorAll('.menu__item--js');
-const menuLanguage = document.querySelectorAll('.menu__language--js');
+const menuEl = document.querySelectorAll('.menu__item-js');
+const menuLanguage = document.querySelectorAll('.menu__language-js');
 
 menuEl.forEach((menuEl) => {
     menuEl.addEventListener('mouseenter', (event) => {
-      event.target.children[1].classList.remove('border--translate')
+      event.target.children[1].classList.remove('border-translate')
       event.target.children[0].classList.add('ON')
     })
     
     menuEl.addEventListener('mouseleave', (event) => {
-      event.target.children[1].classList.add('border--translate')
+      event.target.children[1].classList.add('border-translate')
       event.target.children[0].classList.remove('ON')
     })
   })

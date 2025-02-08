@@ -1,5 +1,5 @@
 
-.menu--display{
+.menu-display{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -50,7 +50,7 @@
   border-bottom: 2px solid rgba(75, 46, 200, 1);
   transition: all .5s;
 }
-.border--translate{
+.border-translate{
   transform: translateX(-105%);
 }
 .ON{
@@ -207,5 +207,5 @@
   }
   .burger__menu{
     padding-right: 10px;
-  }
+  } 
 }
